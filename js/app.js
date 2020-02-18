@@ -19,7 +19,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshPhongMaterial({color: 0x44aa88});  // greenish blue
+const loader = new THREE.TextureLoader();
+const material = new THREE.MeshBasicMaterial({map: loader.load('../resources/wall.jpg'),
+});
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
